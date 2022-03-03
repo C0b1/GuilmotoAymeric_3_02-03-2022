@@ -1,4 +1,15 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 
+@import "./scss/fontawesome.scss";
+@import "./scss/solid.scss";
+@import "./scss/brands.scss";
+
 @import "./base/base";
+@import "./base/typography";
+
+@import "./components/button";
+
+@import "./layouts/header";
+@import "./layouts/location";
+@import "./layouts/howto";

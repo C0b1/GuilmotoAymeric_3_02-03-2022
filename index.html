@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/8415295063.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <title>Ohmyfood</title>
 </head>
 <body>
-    <h1>Ohmyfood</h1>
+    <header class="main_header">
+        <!-- <div class="main_header--backarrow"><a href="index.html"><i class="fa-solid fa-arrow-left"></i></a></div> -->
+        <h1 class="main_header__title"><a href="index.html">ohmyfood</a></h1>
+    </header>
     
+    <div class="location">
+        <div class="location__city"><i class="fa-solid fa-location-dot"></i> Paris, Belleville</div>
+        <div class="location__slogan">
+        <h3>Réservez le menu qui vous convient</h3>    
+        <p>Découvez des restaurants d'exception, séléctionés par nos soins.</p>
+        <div class="button"><a href="#restaurants">Explorer nos retaurants</a></div>
+        </div>
+    </div>
+
+    <div class="howto">
+        <div class="howto__title">Fonctionnement</div>
+        <a href="#" class="howto__card"><span class="howto__card__number">1</span><span class="howto__card__text"><i class="fa-solid fa-mobile-screen-button"></i>Choissisez un restaurant</span></a>
+        <a href="#" class="howto__card"><span class="howto__card__number">2</span><span class="howto__card__text"><i class="fa-solid fa-list"></i>Composez votre menu</span></a>
+        <a href="#" class="howto__card"><span class="howto__card__number">3</span><span class="howto__card__text"><i class="fa-solid fa-store"></i>Dégustez au restaurant</span></a>
+    </div>
 </body>
 </html>

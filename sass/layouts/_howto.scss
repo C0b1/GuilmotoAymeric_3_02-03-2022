@@ -1,0 +1,32 @@
+.howto {
+    width: 90%;
+    margin: auto;
+    &__title {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    &__card {
+        background-color: $colour-background;
+        @include button-shadow;
+        border-radius: 10px;
+        max-width: 275px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        &__number{
+            @include quick-flex;
+            position: relative;
+            left: -0.5rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            color: $colour-text-light;
+            background-color: $colour-primary;
+        }
+        &__text {
+            @include margin-icon(right, 1rem, lighten($colour-text-dark, 50%));
+            margin-left: 1rem;
+        }
+    }
+}
