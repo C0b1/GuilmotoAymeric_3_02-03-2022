@@ -9,9 +9,11 @@
     align-items: center;
 }
 
-@mixin margin-icon ($side, $value, $color: $colour-text-dark) {
+@mixin margin-icon ($side, $value, $color: $colour-text-dark, $size : 15px) {
     i {
         margin-#{$side}: $value;
         color: $color;
+        width: $size;
+        height: $size;
     }
 }
