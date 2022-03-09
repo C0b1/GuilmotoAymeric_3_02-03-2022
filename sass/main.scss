@@ -9,9 +9,12 @@
 @import "./base/typography";
 
 @import "./components/button";
+@import "./components/card";
+
 
 @import "./layouts/header";
-@import "./layouts/location";
-@import "./layouts/howto";
-@import "./layouts/list_restaurants";
+@import "./pages/location";
+@import "./pages/howto";
+@import "./pages/list_restaurants";
+@import "./layouts/menu";
 @import "./layouts/footer";

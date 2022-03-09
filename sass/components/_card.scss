@@ -1,0 +1,23 @@
+.card {
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $background-card;
+    @include button-shadow;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 2% 0;
+    &__name {
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+    &__more {
+        display: flex;
+        justify-content: space-between;
+        &__details {
+            color: lighten($colour-text-dark, 40%);
+        }
+    }
+}

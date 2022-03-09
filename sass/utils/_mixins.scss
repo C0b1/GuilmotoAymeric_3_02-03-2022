@@ -17,3 +17,25 @@
         height: $size;
     }
 }
+
+@mixin bp ($device) {
+    @media only screen and (min-width: map-get($breakpoints, $device)) {
+        @content;
+    }
+}
+
+@mixin margin0 ($class...) {
+    @each $name in $class {
+    .#{$name} {
+        margin : 0;
+    }
+    }
+}
+
+@mixin separator ($colour : $colour-third, $size : 2.5rem) {
+    .separator {
+        display: inline-block;
+        width: $size;
+        border-bottom: 2px solid $colour;
+    }
+}
