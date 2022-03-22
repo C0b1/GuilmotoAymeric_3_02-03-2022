@@ -1,3 +1,58 @@
+@keyframes turn {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes return {
+  0% {
+    transform: rotate3d(0);
+    color: #99E2D0;
+  }
+  25% {
+    transform: rotate3d(0, 1, 1, 1turn);
+    color: gray;
+  }
+  50% {
+    transform: rotate3d(0);
+  }
+  75% {
+    transform: rotate3d(1, 0, 1, 1turn);
+    color: gray;
+  }
+  100% {
+    transform: rotate3d(0);
+    color: #99E2D0;
+  }
+}
+@keyframes load-spinner {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hidden {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@keyframes menu1by1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /*!
  * Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -9017,6 +9072,10 @@ body, html {
   font-size: 14px;
 }
 
+body {
+  position: relative;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9051,9 +9110,70 @@ h3 {
   font-size: 1.2rem;
 }
 
+.main {
+  opacity: 0.2;
+  animation: 1s ease 3.8s forwards load-spinner;
+}
+
+.spinner {
+  z-index: 2;
+  position: absolute;
+  top: 10%;
+  left: 45%;
+  animation: 0.2s ease 3.8s forwards hidden;
+  transform: translate(9999px);
+  transition: transform 0s 3.9s;
+}
+
+.loader {
+  vertical-align: top;
+  font-size: 5rem;
+}
+
+.around {
+  animation: 1.5s ease 1s turn;
+  animation-iteration-count: 2;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.utensils {
+  color: #99E2D0;
+  font-size: 3rem;
+  animation: 3s ease 1s forwards return;
+  animation-iteration-count: 1;
+}
+
+.heart_out {
+  font-size: 2rem;
+  color: #4d4d4d;
+}
+
+.heart_in {
+  font-size: 2rem;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+}
+
+.anim_heart:hover {
+  cursor: pointer;
+}
+.anim_heart:hover .heart_in {
+  transform-origin: bottom;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+.anim_heart:hover .heart_out {
+  transform: scale(0);
+  transition: transform 1s;
+}
+
 .button {
   background: linear-gradient(to right bottom, #FF79DA, #9356DC);
-  box-shadow: 0px 2px 5px #b9b9b9;
+  box-shadow: 2px 2px 6px lightgray;
   border-radius: 25px;
   width: 175px;
   height: 2rem;
@@ -9068,29 +9188,80 @@ h3 {
   width: 100%;
   color: #FFFFFF;
 }
+.button:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+  box-shadow: 5px 5px 6px lightgray;
+  transition: opacity 0.2s, transform 0.4s;
+}
 
 .card {
-  width: 100%;
-  height: 3.5rem;
+  width: 250px;
+  height: 4rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  overflow: hidden;
   background-color: #fafafa;
-  box-shadow: 0px 2px 5px #b9b9b9;
+  box-shadow: 2px 2px 6px lightgray;
   border-radius: 15px;
-  padding: 5px;
+  cursor: pointer;
   margin: 2% 0;
+  opacity: 0;
 }
-.card__name {
+.card__meal {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.card__meal__name {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
-.card__more {
+.card__meal__more {
+  width: 250px;
+  height: 50%;
   display: flex;
   justify-content: space-between;
+  font-size: 0.8rem;
 }
-.card__more__details {
+.card__meal__more .details {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #666666;
+}
+.card__meal__more .price {
+  width: 20%;
+  height: 100%;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.card--check {
+  width: 50px;
+  height: 100%;
+  background-color: #99E2D0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.card--check i {
+  font-size: 1.5rem;
+  color: white;
+}
+.card:hover .card__meal__more {
+  transition: all 0.5s;
+  width: 200px;
+}
+.card:hover .card--check i {
+  transform: rotate(1turn);
+  transition: transform 0.5s;
 }
 
 .main_header {
@@ -9150,7 +9321,7 @@ h3 {
 .howto__card {
   position: relative;
   background-color: #ececec;
-  box-shadow: 0px 2px 5px #b9b9b9;
+  box-shadow: 2px 2px 6px lightgray;
   border-radius: 10px;
   width: 100%;
   height: 3rem;
@@ -9182,6 +9353,36 @@ h3 {
   height: 15px;
 }
 
+@media only screen and (min-width: 480px) {
+  .howto {
+    width: 300px;
+    align-items: flex-start;
+  }
+  .howto__card {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .top_site {
+    width: 70%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 50px auto;
+  }
+
+  .location {
+    margin: 0;
+  }
+
+  .howto {
+    margin: 0;
+  }
+
+  .location, .howto {
+    width: 50%;
+  }
+}
 .list_restaurants {
   width: 100%;
   margin: 30px auto 0 auto;
@@ -9203,6 +9404,12 @@ h3 {
   border-radius: 15px;
   overflow: hidden;
   background-color: #fafafa;
+  box-shadow: 2px 2px 6px lightgray;
+}
+.list_restaurants__card:hover {
+  box-shadow: 8px 8px 6px lightgray;
+  transform: scale(102%) translate(5px);
+  transition: all 0.3s;
 }
 
 .card_img--new {
@@ -9290,7 +9497,7 @@ h3 {
   flex-direction: column;
   text-transform: uppercase;
   color: #666666;
-  margin: 20px 0 0 0;
+  margin: 20px 0 10px 0;
 }
 .menu__title--small .separator {
   display: inline-block;
@@ -9306,6 +9513,43 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+}
+.menu__starter {
+  animation: 1s ease forwards menu1by1;
+}
+.menu__maincourse {
+  animation: 1s ease 1s forwards menu1by1;
+}
+.menu__dessert {
+  animation: 1s ease 2s forwards menu1by1;
+}
+.menu .card1 {
+  animation: 0.33s ease 0.33s forwards menu1by1;
+}
+.menu .card2 {
+  animation: 0.33s ease 0.66s forwards menu1by1;
+}
+.menu .card3 {
+  animation: 0.33s ease 0.99s forwards menu1by1;
+}
+.menu .card4 {
+  animation: 0.33s ease 1.32s forwards menu1by1;
+}
+.menu .card5 {
+  animation: 0.33s ease 1.65s forwards menu1by1;
+}
+.menu .card6 {
+  animation: 0.33s ease 1.98s forwards menu1by1;
+}
+.menu .card7 {
+  animation: 0.33s ease 2.31s forwards menu1by1;
+}
+.menu .card8 {
+  animation: 0.33s ease 2.64s forwards menu1by1;
+}
+.menu .card9 {
+  animation: 0.33s ease 2.97s forwards menu1by1;
 }
 
 footer {

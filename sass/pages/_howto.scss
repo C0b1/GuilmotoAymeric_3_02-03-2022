@@ -33,26 +33,26 @@
     }
 }
 
-// @include bp(tablet) {
-//     .howto {
-//     width: 300px;
-//     align-items: flex-start;
-//         &__card {
-//             width: 300px;
-//         }
-//     }
-// };
+@include bp(tablet) {
+    .howto {
+    width: 300px;
+    align-items: flex-start;
+        &__card {
+            width: 300px;
+        }
+    }
+};
 
-// @include bp(laptop) {
-//     .top_site {
-//         width: 70%;
-//         display: flex;
-//         flex-direction: row-reverse;
-//         justify-content: space-between;
-//         margin: 50px auto;
-//     }
-//     @include margin0(location, howto);
-//     .location, .howto {
-//         width: 50%;
-//     }
-// };
+@include bp(laptop) {
+    .top_site {
+        width: 70%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 50px auto;
+    }
+    @include margin0(location, howto);
+    .location, .howto {
+        width: 50%;
+    }
+};

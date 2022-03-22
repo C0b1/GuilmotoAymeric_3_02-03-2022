@@ -4,6 +4,7 @@ $colour-third : #99E2D0;
 $colour-text-light : #FFFFFF;
 $colour-text-dark : #000000;
 $colour-background : #ececec;
+$colour-btn : linear-gradient(to right bottom, $colour-secondary, $colour-primary);
 $background-card : darken($colour-text-light, 2%);
 
 $fa-font-path : "../libs/webfonts";

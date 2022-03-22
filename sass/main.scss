@@ -1,5 +1,6 @@
 @import "./utils/variables";
 @import "./utils/mixins";
+@import "./utils/keyframes";
 
 @import "./scss/fontawesome.scss";
 @import "./scss/solid.scss";
@@ -8,6 +9,7 @@
 @import "./base/base";
 @import "./base/typography";
 
+@import "./components/animation";
 @import "./components/button";
 @import "./components/card";
 

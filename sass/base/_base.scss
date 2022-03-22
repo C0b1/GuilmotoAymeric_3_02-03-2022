@@ -4,6 +4,9 @@ body, html {
     width: 100%;
     font-size: 14px;
 }
+body {
+    position: relative;
+}
 * {
     box-sizing: border-box;
 }

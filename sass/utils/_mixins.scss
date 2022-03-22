@@ -1,5 +1,5 @@
-@mixin button-shadow {
-    box-shadow: 0px 2px 5px darken($colour-background, 20%);
+@mixin button-shadow($value : 2px) {
+    box-shadow: $value $value 6px darken($colour-background, 10%);
 }
 
 @mixin quick-flex($direction: row) {
@@ -31,7 +31,6 @@
     }
     }
 }
-
 @mixin separator ($colour : $colour-third, $size : 2.5rem) {
     .separator {
         display: inline-block;

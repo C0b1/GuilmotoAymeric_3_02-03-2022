@@ -1,23 +1,69 @@
 .card {
-    width: 100%;
-    height: 3.5rem;
+    width: 250px;
+    height: 4rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    overflow: hidden;
     background-color: $background-card;
     @include button-shadow;
     border-radius: 15px;
-    padding: 5px;
+    cursor: pointer;
     margin: 2% 0;
-    &__name {
-        font-weight: bold;
-        font-size: 0.9rem;
+    opacity: 0;
+    &__meal {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        &__name {
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        &__more {
+            width: 250px;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            .details {
+                width: 80%;
+                height: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: lighten($colour-text-dark, 40%);
+            }
+            .price {
+                width: 20%;
+                height: 100%;
+                margin-left: 5px;
+                font-weight: bold;
+            }
+        }
     }
-    &__more {
-        display: flex;
-        justify-content: space-between;
-        &__details {
-            color: lighten($colour-text-dark, 40%);
+    &--check {
+        width: 50px;
+        height: 100%;
+        background-color: $colour-third;
+        @include quick-flex;
+        i {
+            font-size: 1.5rem;
+            color: white;
+        }
+    }
+    &:hover {
+        .card__meal__more {
+            transition: all 0.5s;
+            width: 200px;
+        }
+        .card--check {
+            i {
+                transform: rotate(1turn);
+                transition: transform 0.5s;
+            }
         }
     }
 }

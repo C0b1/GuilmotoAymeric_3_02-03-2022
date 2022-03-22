@@ -15,6 +15,12 @@
         border-radius: 15px;
         overflow: hidden;
         background-color: $background-card;
+        @include button-shadow;
+        &:hover {
+            @include button-shadow(8px);
+            transform: scale(102%) translate(5px);
+            transition: all 0.3s;
+        }
     }
 }
 .card_img--new {
