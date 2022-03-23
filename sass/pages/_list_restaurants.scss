@@ -66,3 +66,26 @@
         background-color: $background-card;
     }
 }
+
+@include bp(tablet) {
+    .list_restaurants {
+        width: 93%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        &__title {
+            width: 100%;
+            text-align: center;
+        }
+        &__card {
+            width: 70%;
+        }
+    }
+}
+
+@include bp(laptop) {
+    .list_restaurants__card {
+        width: 40%;
+    }
+}

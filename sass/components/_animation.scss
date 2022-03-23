@@ -9,8 +9,6 @@
     top: 10%;
     left: 45%;
     animation: 0.2s ease 3.8s forwards hidden;
-    transform: translate(9999px);
-    transition: transform 0s 3.9s;
 }
 .loader {
     vertical-align: top;
@@ -19,8 +17,9 @@
 .around {
     animation: 1.5s ease 1s turn;
     animation-iteration-count: 2;
+    color: $colour-primary;
     background: linear-gradient($colour-secondary, $colour-primary);
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .utensils {
@@ -37,7 +36,7 @@
 .heart_in {
     font-size: 2rem;
     background: linear-gradient($colour-secondary, $colour-primary);
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: scale(0);
 }

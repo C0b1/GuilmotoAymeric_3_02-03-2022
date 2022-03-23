@@ -38,13 +38,17 @@
     }
 }
 @keyframes hidden {
-    from {
+    0% {
         visibility: visible;
         opacity: 1;
     }
-    to {
+    90% {
         visibility: hidden;
         opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        transform: translate(9999px);
     }
 }
 // FOR LOADING MENU

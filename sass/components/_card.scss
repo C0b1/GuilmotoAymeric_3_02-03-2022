@@ -1,5 +1,5 @@
 .card {
-    width: 250px;
+    width: 300px;
     height: 4rem;
     display: flex;
     overflow: hidden;
@@ -20,10 +20,10 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.8rem;
         }
         &__more {
-            width: 250px;
+            width: 300px;
             height: 50%;
             display: flex;
             justify-content: space-between;
@@ -45,7 +45,7 @@
         }
     }
     &--check {
-        width: 50px;
+        width: 75px;
         height: 100%;
         background-color: $colour-third;
         @include quick-flex;
@@ -57,7 +57,7 @@
     &:hover {
         .card__meal__more {
             transition: all 0.5s;
-            width: 200px;
+            width: 225px;
         }
         .card--check {
             i {
@@ -65,5 +65,48 @@
                 transition: transform 0.5s;
             }
         }
+    }
+}
+
+@include bp(tablet) {
+    .card {
+        width: 400px;
+        &:hover {
+            .card__meal__more {
+                width: 325px;
+            }
+        }
+    }
+    .card__meal__more {
+        width: 400px;
+    }
+}
+
+@include bp(laptop) {
+    .card {
+        width: 225px;
+        margin: 20px 0;
+        &:hover {
+            .card__meal__more {
+                width: 150px;
+            }
+        }
+    }
+    .card__meal__more {
+        width: 225px;
+    }
+}
+
+@include bp(desktop) {
+    .card {
+        width: 275px;
+        &:hover {
+            .card__meal__more {
+                width: 200px;
+            }
+        }
+    }
+    .card__meal__more {
+        width: 275px;
     }
 }
