@@ -9,23 +9,17 @@
 }
 @keyframes return {
     0% {
-        transform: rotate3d(0);
         color: $colour-third;
     }
     25% {
         transform: rotate3d(0, 1, 1, 1turn);
         color: lighten($colour-text-dark, 50%);
     }
-    50% {
-        transform: rotate3d(0);
-        
-    }
     75% {
         transform: rotate3d(1, 0, 1, 1turn);
         color: lighten($colour-text-dark, 50%);
     }
     100% {
-        transform: rotate3d(0);
         color: $colour-third;
     }
 }

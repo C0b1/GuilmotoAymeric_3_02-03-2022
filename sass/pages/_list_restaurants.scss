@@ -18,7 +18,7 @@
         @include button-shadow;
         &:hover {
             @include button-shadow(8px);
-            transform: scale(102%) translate(5px);
+            transform: scale(1.02) translate(5px);
             transition: all 0.3s;
         }
     }

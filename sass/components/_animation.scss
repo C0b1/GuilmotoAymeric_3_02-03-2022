@@ -7,8 +7,14 @@
     z-index: 2;
     position: absolute;
     top: 10%;
-    left: 45%;
+    left: 30%;
     animation: 0.2s ease 3.8s forwards hidden;
+    @include bp(tablet) {
+        left: 40%;
+    }
+    @include bp(laptop) {
+        left: 45%;
+    }
 }
 .loader {
     vertical-align: top;
@@ -28,6 +34,7 @@
     animation: 3s ease 1s forwards return ;
     animation-iteration-count: 1;
 }
+
 // HEART 
 .heart_out {
     font-size: 2rem;
@@ -54,18 +61,9 @@
 }
 // LOAD MENU
 @mixin anim_menu {
-    &__starter {
-        animation : 1s ease forwards menu1by1;
-    }
-    &__maincourse {
-        animation : 1s ease 1s forwards menu1by1;
-    }
-    &__dessert {
-        animation : 1s ease 2s forwards menu1by1;
-    }
     $i: 1;
     $delay: 0;
-    @while $i < 10 {
+    @while $i < 11 {
         .card#{$i} {
             $delay: $delay + 0.33s;
             animation: 0.33s ease $delay forwards menu1by1;

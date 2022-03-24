@@ -5,6 +5,7 @@
 
 .banner_img {
     width: 100%;
+    max-height: 200px;
     img {
         width: 100%;
         object-fit: cover;
@@ -46,7 +47,6 @@
     &__starter, &__maincourse, &__dessert {
         width: 95%;
         @include quick-flex(column);
-        opacity: 0;
     }
     @include anim_menu;
 }
@@ -69,6 +69,7 @@
         width: 93%;
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
         flex-wrap: wrap;
         padding: 10px;
         &__title {
