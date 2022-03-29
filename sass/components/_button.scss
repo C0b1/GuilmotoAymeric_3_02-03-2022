@@ -1,0 +1,20 @@
+.button {
+    background: $colour-btn;
+    @include button-shadow;
+    border-radius: 25px;
+    width: 175px;
+    height: 2rem;
+    margin: 10px;
+    a {
+    @include quick-flex(row);
+    height: 100%;
+    width: 100%;
+    color: $colour-text-light;
+    }
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.1);
+        @include button-shadow(5px);
+        transition: opacity 0.2s, transform 0.4s;
+    }
+}

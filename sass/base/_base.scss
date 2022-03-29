@@ -1,0 +1,26 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+body {
+    position: relative;
+}
+* {
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0
+}
+a {
+    text-decoration: none;
+    color: #000000
+}
+ul {
+    padding-left: 0;
+}
+li {
+    list-style: none;
+}

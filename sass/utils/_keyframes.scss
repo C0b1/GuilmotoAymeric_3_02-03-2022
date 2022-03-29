@@ -1,0 +1,55 @@
+// FOR SPINNER
+@keyframes turn {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+@keyframes return {
+    0% {
+        color: $colour-third;
+    }
+    25% {
+        transform: rotate3d(0, 1, 1, 1turn);
+        color: lighten($colour-text-dark, 50%);
+    }
+    75% {
+        transform: rotate3d(1, 0, 1, 1turn);
+        color: lighten($colour-text-dark, 50%);
+    }
+    100% {
+        color: $colour-third;
+    }
+}
+@keyframes load-spinner {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes hidden {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    90% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+// FOR LOADING MENU
+@keyframes menu1by1 {
+    from {
+            opacity: 0;
+    }
+    to {
+            opacity: 1;
+    }
+}

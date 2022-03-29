@@ -1,0 +1,73 @@
+// SPINNER
+.main {
+    opacity: 0.2;
+    animation: 1s ease 3.8s forwards load-spinner;
+}
+.spinner {
+    z-index: 2;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    animation: 0.2s ease 3.8s forwards hidden;
+    @include bp(tablet) {
+        left: 40%;
+    }
+    @include bp(laptop) {
+        left: 45%;
+    }
+}
+.loader {
+    vertical-align: top;
+    font-size: 5rem;
+}
+.around {
+    animation: 1.5s ease 1s turn;
+    animation-iteration-count: 2;
+    color: $colour-primary;
+    background: linear-gradient($colour-secondary, $colour-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.utensils {
+    color: $colour-third;
+    font-size: 3rem;
+    animation: 3s ease 1s forwards return ;
+    animation-iteration-count: 1;
+}
+
+// HEART 
+.heart_out {
+    font-size: 2rem;
+    color: lighten($colour-text-dark, 30%);
+}
+.heart_in {
+    font-size: 2rem;
+    background: linear-gradient($colour-secondary, $colour-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(0);
+}
+.anim_heart:hover {
+    cursor: pointer;
+    .heart_in {
+        transform-origin: bottom;
+        transform: scale(1);
+        transition: transform 0.5s;
+    }
+    .heart_out {
+        transform: scale(0);
+        transition: transform 1s;
+    }
+}
+// LOAD MENU
+@mixin anim_menu {
+    $i: 1;
+    $delay: 0;
+    @while $i < 11 {
+        .card#{$i} {
+            $delay: $delay + 0.33s;
+            animation: 0.33s ease $delay forwards menu1by1;
+            $i: $i + 1;
+        }
+    }
+}

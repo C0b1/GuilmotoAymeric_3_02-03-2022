@@ -1,0 +1,40 @@
+@mixin button-shadow($value : 2px) {
+    box-shadow: $value $value 6px darken($colour-background, 10%);
+}
+
+@mixin quick-flex($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin margin-icon ($side, $value, $color: $colour-text-dark, $size : 15px) {
+    i {
+        margin-#{$side}: $value;
+        color: $color;
+        width: $size;
+        height: $size;
+    }
+}
+
+@mixin bp ($device) {
+    @media only screen and (min-width: map-get($breakpoints, $device)) {
+        @content;
+    }
+}
+
+@mixin margin0 ($class...) {
+    @each $name in $class {
+    .#{$name} {
+        margin : 0;
+    }
+    }
+}
+@mixin separator ($colour : $colour-third, $size : 2.5rem) {
+    .separator {
+        display: inline-block;
+        width: $size;
+        border-bottom: 2px solid $colour;
+    }
+}
