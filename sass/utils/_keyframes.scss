@@ -39,10 +39,9 @@
     90% {
         visibility: hidden;
         opacity: 0;
-        transform: scale(0);
     }
     100% {
-        transform: translate(9999px);
+        transform: scale(0);
     }
 }
 // FOR LOADING MENU
