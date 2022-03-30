@@ -10161,7 +10161,6 @@ body, html {
   padding: 0;
   width: 100%;
   font-size: 14px;
-  overflow-x: hidden;
 }
 
 body {
@@ -10618,7 +10617,6 @@ h3 {
   }
 }
 .main_page {
-  position: absolute;
   background-color: #ececec;
 }
 
